@@ -1,4 +1,4 @@
-# Briefcase
+# Aa
 
 Transform selected text case instantly with smart cycling. Works globally across all applications.
 
