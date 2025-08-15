@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "aa",
+  "name": "text-case",
   "title": "Aa",
   "description": "Transform selected text case with smart cycling. Works globally across applications.",
   "icon": "extension-icon.png",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "aa",
+      "name": "text-case",
       "title": "Aa",
       "description": "Toggle case of selected text (UPPER ↔ lower ↔ Title Case)",
       "mode": "no-view",
