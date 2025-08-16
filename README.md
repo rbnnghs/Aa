@@ -8,6 +8,8 @@ Raycast extension for quick text case transformation.
 - Works globally across all applications
 - Smart cycling through case types
 
+![Demo](assets/demo.gif)
+
 ## Install
 
 1. Download or clone this repository
