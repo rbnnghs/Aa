@@ -1,6 +1,5 @@
 import { Clipboard, showHUD, getSelectedText } from "@raycast/api";
 
-// Enhanced case detection and transformation with title case support
 function detectCasePattern(text: string): "upper" | "lower" | "title" | "mixed" | "empty" {
   if (!text || text.trim().length === 0) return "empty";
 
@@ -10,14 +9,12 @@ function detectCasePattern(text: string): "upper" | "lower" | "title" | "mixed" 
   if (hasUpper && !hasLower) return "upper";
   if (hasLower && !hasUpper) return "lower";
 
-  // Check for title case pattern (first letter of each word capitalized)
   if (isTitleCase(text)) return "title";
 
   return "mixed";
 }
 
 function isTitleCase(text: string): boolean {
-  // Title case: first letter of each word is capitalized, rest are lowercase
   const words = text.split(/\s+/);
   return words.every((word) => {
     if (word.length === 0) return true;
@@ -36,22 +33,17 @@ function transformCase(text: string): string {
 
   const pattern = detectCasePattern(text);
 
-  // Always cycle in the same order: lowercase → UPPERCASE → Title Case → Normal
   switch (pattern) {
     case "lower":
-      // lowercase → UPPERCASE
       return text.toUpperCase();
 
     case "upper":
-      // UPPERCASE → Title Case
       return toTitleCase(text);
 
     case "title":
-      // Title Case → Normal (mixed)
       return text.toLowerCase();
 
     case "mixed":
-      // Normal → lowercase
       return text.toLowerCase();
 
     default:
@@ -59,7 +51,6 @@ function transformCase(text: string): string {
   }
 }
 
-// Helper function to get selected text
 async function getSelectedTextSafely(): Promise<string> {
   try {
     return await getSelectedText();
@@ -68,14 +59,12 @@ async function getSelectedTextSafely(): Promise<string> {
   }
 }
 
-// Helper function to replace text
 async function replaceText(text: string): Promise<void> {
   await Clipboard.copy(text);
   await new Promise((resolve) => setTimeout(resolve, 50));
   await Clipboard.paste(text);
 }
 
-// Main cycling command
 export default async function Command() {
   try {
     const selectedText = await getSelectedTextSafely();

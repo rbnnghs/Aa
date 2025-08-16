@@ -1,6 +1,5 @@
 import { Clipboard, showHUD, getSelectedText } from "@raycast/api";
 
-// Helper function to get selected text
 async function getSelectedTextSafely(): Promise<string> {
   try {
     return await getSelectedText();
@@ -9,7 +8,6 @@ async function getSelectedTextSafely(): Promise<string> {
   }
 }
 
-// Helper function to replace text
 async function replaceText(text: string): Promise<void> {
   await Clipboard.copy(text);
   await new Promise((resolve) => setTimeout(resolve, 50));
