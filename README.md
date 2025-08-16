@@ -2,13 +2,13 @@
 
 Raycast extension for quick text case transformation.
 
+![Demo](assets/demo.gif)
+
 ## Features
 
 - Transform selected text case with keyboard shortcuts
 - Works globally across all applications
 - Smart cycling through case types
-
-![Demo](assets/demo.gif)
 
 ## Install
 
